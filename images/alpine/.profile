@@ -1,5 +1,5 @@
 # Prompt
-export PS1='\e[1;32m\u@alpine-dev:\w\$ \[\e[0m\]'
+export PS1="\e[0;36m[alpine-dev:\w] ❯ \e[m"
 
 # Aliases
 alias ll='ls -lah'
