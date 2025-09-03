@@ -1,18 +1,17 @@
 name: Publish Docker Image
-
 on: push
 
+# allow image publishing
 permissions:
     contents: read
     packages: write
-
 
 jobs:
   publish:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        image: [ 'alpine' ]
+        image: [ 'alpine', 'debian' ]
 
     steps:
       - name: checkout
