@@ -5,7 +5,7 @@ LABEL debian_version=12
 LABEL name=debin-dev
 # add util tools
 RUN apt update \
-    && apt install -y curl vim jq git iputils-ping \
+    && apt install -y curl vim jq git iputils-ping unzip \
     && rm -rf /var/lib/apt/lists/*
 # copy config files
 COPY dotfiles/gitconfig/.gitconfig dotfiles/vimrc/.vimrc images/debian/.profile /root/

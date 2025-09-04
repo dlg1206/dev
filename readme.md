@@ -48,4 +48,5 @@ docker pull ghcr.io/dlg1206/debian
 - `git`
 - `jq`
 - `ping`
-- `vim` 
+- `unzip`
+- `vim`
