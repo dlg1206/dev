@@ -8,5 +8,5 @@ RUN apk add --no-cache curl vim jq git
 # copy config files
 COPY dotfiles/gitconfig/.gitconfig dotfiles/vimrc/.vimrc images/alpine/.profile /root/
 # launch shell
-WORKDIR /dev
+WORKDIR /workspace
 ENTRYPOINT ["ash", "--login"]

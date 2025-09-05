@@ -10,5 +10,5 @@ RUN apt update \
 # copy config files
 COPY dotfiles/gitconfig/.gitconfig dotfiles/vimrc/.vimrc images/debian/.profile /root/
 # launch shell
-WORKDIR /dev
+WORKDIR /workspace
 ENTRYPOINT ["bash", "--login"]

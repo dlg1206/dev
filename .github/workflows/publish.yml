@@ -18,18 +18,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
+          fetch-depth: 0
 
       - name: confirm changes to ${{ matrix.image }}
         id: changes
         run: |
-            # The new commit just pushed
-            NEW_COMMIT=$GITHUB_SHA
-
-            # The parent of the new commit (previous commit on origin/main before this push)
-            PREV_COMMIT=$(git rev-parse ${NEW_COMMIT}^)
-
             # Show files changed between the previous commit and the new commit
-            git diff --name-only $PREV_COMMIT $NEW_COMMIT | grep "^images/${{ matrix.image }}/" && \
+            git diff --name-only $(git rev-parse HEAD^1) HEAD | grep "^images/${{ matrix.image }}/" && \
                 echo "changed=true" >> $GITHUB_OUTPUT || \
                 echo "changed=false" >> $GITHUB_OUTPUT
 
